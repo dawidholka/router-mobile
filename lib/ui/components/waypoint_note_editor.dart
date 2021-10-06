@@ -13,7 +13,7 @@ class WaypointNoteEditor extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       scrollable: true,
-      title: Text('Edycja notatki'),
+      title: Text('waypoint.noteEdit'.tr),
       content: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Form(
@@ -22,9 +22,10 @@ class WaypointNoteEditor extends StatelessWidget {
               FormInputFieldWithIcon(
                 controller: controller.noteController,
                 iconPrefix: Icons.note,
-                labelText: 'Notatka',
+                labelText: 'waypoint.driverNote'.tr,
                 validator: Validator().notEmpty,
-                maxLines: 5,
+                maxLines: null,
+                keyboardType: TextInputType.multiline,
                 onChanged: (value) => null,
                 onSaved: (value) => controller.noteController.text = value!,
               ),
@@ -33,7 +34,13 @@ class WaypointNoteEditor extends StatelessWidget {
         ),
       ),
       actions: [
-        ElevatedButton(onPressed: () {}, child: Text('Zapisz'))
+        ElevatedButton(
+          onPressed: () {
+            controller.updateDriverNote();
+            Navigator.pop(context);
+          },
+          child: Text('common.save'.tr),
+        ),
       ],
     );
   }

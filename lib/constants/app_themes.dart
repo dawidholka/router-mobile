@@ -78,7 +78,7 @@ class AppThemes {
   static const TextTheme _lightTextTheme = TextTheme(
     headline1: TextStyle(fontSize: 20.0, color: _lightTextColor),
     bodyText1: TextStyle(fontSize: 16.0, color: _lightTextColor),
-    bodyText2: TextStyle(fontSize: 14.0, color: Colors.grey),
+    bodyText2: TextStyle(fontSize: 14.0, color: Colors.black),
     button: TextStyle(
         fontSize: 15.0, color: _lightTextColor, fontWeight: FontWeight.w600),
     headline6: TextStyle(fontSize: 16.0, color: _lightTextColor),
@@ -164,7 +164,7 @@ class AppThemes {
   static const TextTheme _darkTextTheme = TextTheme(
     headline1: TextStyle(fontSize: 20.0, color: _darkTextColor),
     bodyText1: TextStyle(fontSize: 16.0, color: _darkTextColor),
-    bodyText2: TextStyle(fontSize: 14.0, color: Colors.grey),
+    bodyText2: TextStyle(fontSize: 14.0, color: Colors.white),
     button: TextStyle(
         fontSize: 15.0, color: _darkTextColor, fontWeight: FontWeight.w600),
     headline6: TextStyle(fontSize: 16.0, color: _darkTextColor),

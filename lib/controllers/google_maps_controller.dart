@@ -13,12 +13,11 @@ import 'package:router/models/route.dart';
 import 'package:router/models/route_list_model.dart';
 import 'package:router/services/router_service.dart';
 import 'package:router/ui/components/loading.dart';
-import 'package:router/ui/waypoint_ui.dart';
 
-class CurrentRouteController extends GetxController {
+class GoogleMapsController extends GetxController {
   AuthController authController = Get.find();
 
-  static CurrentRouteController get to => Get.find();
+  static GoogleMapsController get to => Get.find();
   DatabaseHelper databaseHelper = DatabaseHelper();
   RxList<WaypointModel> waypoints = RxList<WaypointModel>([]);
   RxList<WaypointModel> delivered = RxList<WaypointModel>([]);
@@ -66,7 +65,7 @@ class CurrentRouteController extends GetxController {
     currentRoute!(storeData);
   }
 
-  selectWaypoint(WaypointModel waypoint) {
+  selectWaypoint(WaypointModel waypoint) async {
     _selectedWaypoint!.value = waypoint;
     noteController.text = waypoint.driverNote ?? '';
   }
@@ -195,5 +194,20 @@ class CurrentRouteController extends GetxController {
           backgroundColor: Get.theme.snackBarTheme.backgroundColor,
           colorText: Get.theme.snackBarTheme.actionTextColor);
     }
+  }
+
+  Future<Set<Marker>> getMarkers(BuildContext context) async {
+    BitmapDescriptor undeliveredIcon = await BitmapDescriptorHelper().getSvgAsset(context, 'assets/pin-red.svg');
+
+    Set<Marker> markers = {};
+    for (WaypointModel element in waypoints) {
+      markers.add(Marker(
+        markerId: MarkerId(element.id.toString()),
+        position: LatLng(element.lat, element.lng),
+        icon: undeliveredIcon
+      ));
+    }
+
+    return markers;
   }
 }

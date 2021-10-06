@@ -11,5 +11,6 @@ class AppRoutes {
     GetPage(name: '/routes', page: () => RoutesUI()),
     GetPage(name: '/current-route', page: () => CurrentRouteUI()),
     GetPage(name: '/waypoint/:id', page: () => WaypointUI()),
+    GetPage(name: '/map', page: () => MapUI()),
   ];
 }

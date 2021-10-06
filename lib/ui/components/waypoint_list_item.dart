@@ -13,12 +13,15 @@ class WaypointListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color? textColor = (item.status == 'problem') ? Color(0xFFFF0000) : null;
+
     return Card(
         child: ListTile(
       title: Text(
-        '${item.stopNumber.toString()}. ${item.address}',
-        style: const TextStyle(
+        '${item.stopNumber.toString()}. ${item.address} \n${item.content ?? '-'} - ${item.quantity ?? '-'}',
+        style: TextStyle(
           fontSize: 16,
+          color: textColor,
         ),
       ),
       onTap: () {

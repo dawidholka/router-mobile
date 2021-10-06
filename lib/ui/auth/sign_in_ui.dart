@@ -28,7 +28,7 @@ class SignInUI extends StatelessWidget {
                 children: <Widget>[
                   FormInputFieldWithIcon(
                     controller: authController.loginController,
-                    iconPrefix: Icons.email,
+                    iconPrefix: Icons.person,
                     labelText: 'auth.loginFormField'.tr,
                     validator: Validator().login,
                     keyboardType: TextInputType.emailAddress,

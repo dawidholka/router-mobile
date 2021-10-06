@@ -20,8 +20,8 @@ class CurrentRouteUI extends StatelessWidget {
                   title: Text('currentRoute.title'.tr),
                   bottom: TabBar(
                     tabs: [
-                      Tab(text: 'Niedostarczone'),
-                      Tab(text: 'Dostarczone'),
+                      Tab(text: 'currentRoute.undelivered'.tr),
+                      Tab(text: 'currentRoute.delivered'.tr),
                     ],
                   ),
                 ),

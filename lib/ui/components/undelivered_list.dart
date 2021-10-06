@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:router/controllers/controllers.dart';
 import 'package:get/get.dart';
 import 'package:router/models/waypoint_model.dart';
+import 'package:router/ui/components/waypoint_list_item.dart';
 
 class UndeliveredList extends StatelessWidget {
   final CurrentRouteController controller = Get.find();
@@ -15,7 +16,7 @@ class UndeliveredList extends StatelessWidget {
           itemCount: controller.undelivered.length,
           itemBuilder: (_, index) {
             WaypointModel item = controller.undelivered.elementAt(index);
-            return Text(item.name);
+            return WaypointListItem(item);
           });
     });
   }

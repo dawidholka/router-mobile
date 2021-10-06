@@ -37,39 +37,42 @@ class AppDrawer extends StatelessWidget {
                 ],
               )),
           ListTile(
-            leading: Icon(Icons.home),
-            title: Text('Strona główna'),
+            leading: const Icon(Icons.home),
+            title: Text('home.title'.tr),
             onTap: () {
               Get.offAll(() => HomeUI());
             },
           ),
           ListTile(
-            leading: Icon(Icons.map),
-            title: Text('Mapa'),
+            leading: const Icon(Icons.map),
+            title: Text('map.title'.tr),
+            onTap: () {
+              Get.offAll(() => MapUI());
+            },
           ),
           ListTile(
-            leading: Icon(Icons.pin_drop),
-            title: Text('Aktualna trasa'),
+            leading: const Icon(Icons.pin_drop),
+            title: Text('currentRoute.title'.tr),
             onTap: () {
               Get.offAll(CurrentRouteUI());
             }
           ),
           ListTile(
             leading: const Icon(Icons.navigation),
-            title: const Text('Trasy'),
+            title: Text('routes.title'.tr),
             onTap: () {
               Get.offAll(RoutesUI());
             },
           ),
           ListTile(
               leading: const Icon(Icons.settings),
-              title: const Text('Settings'),
+              title: Text('settings.title'.tr),
               onTap: () {
                 Get.to(SettingsUI());
               }),
           ListTile(
               leading: const Icon(Icons.info),
-              title: const Text('O aplikacji'),
+              title: Text('about.title'.tr),
               onTap: () {
                 Get.to(SettingsUI());
               }),

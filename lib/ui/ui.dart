@@ -4,3 +4,4 @@ export 'settings_ui.dart';
 export 'routes_ui.dart';
 export 'current_route_ui.dart';
 export 'waypoint_ui.dart';
+export 'map_ui.dart';
